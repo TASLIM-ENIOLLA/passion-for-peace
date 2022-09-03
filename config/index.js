@@ -7,7 +7,7 @@ export const server = {
 		url: (
 			(dev)
 			? 'http://localhost:3010/'
-			: 'http://unknown'
+			: 'https://passion-for-peace.vercel.app/'
 		)
 	},
 	backend: {
@@ -15,7 +15,7 @@ export const server = {
 			(dev)
 			// ? 'http://192.168.137.1:80/passion-for-peace/'
 			? 'http://localhost:80/passion-for-peace/'
-			: 'http://unknown'
+			: 'https://pfp1904.000webhostapp.com/'
 		)
 	}
 }

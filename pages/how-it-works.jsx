@@ -25,17 +25,8 @@ export default () => {
                             <div className = 'd-none d-lg-block col-lg-4'>
                                 <div className = 'py-5'>
                                     <div className = 'border-left px-4 py-5'>
-                                        <h3 className = 'mb-4'>What is AGSMEIS?</h3>
+                                        <h3 className = 'mb-4'>How it works?</h3>
                                         <div className = 'pt-4 mb-5'>
-                                            <div>
-                                                <a href = '#about' className = 'page-navs fo-s-15 text-capitalize d-inline-block mb-4 underline light'>about us</a>
-                                            </div>
-                                            <div>
-                                                <a href = '#mission' className = 'page-navs fo-s-15 text-capitalize d-inline-block mb-4 underline light'>our mission</a>
-                                            </div>
-                                            <div>
-                                                <a href = '#vision' className = 'page-navs fo-s-15 text-capitalize d-inline-block mb-4 underline light'>our vision</a>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

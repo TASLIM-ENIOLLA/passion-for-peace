@@ -84,7 +84,7 @@ export default () => {
                     border-radius: 3rem;
                 }
                 .underlay-bg{
-                    background: linear-gradient(55deg, #ffffffff 50%, #ffffff77, #ffffff00), url(./images/main-bg.jpg);
+                    background: linear-gradient(55deg, #ffffffff 70%, #ffffffbb), url(./images/main-bg.jpg);
                     background-attachment: fixed;
                 }
                 main{

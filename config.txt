@@ -2,7 +2,7 @@ Front-end hosting platform: Vercel
 Back-end hosting platform: 000Webhost
 
 BACKEND
-Email: pfp.taslim.eniolla@gmail.com
+Email: pfp.taslim.eniollla@gmail.com
 password: $Aderibigbe1904
 
 FTP / WEBSITE

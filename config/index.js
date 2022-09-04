@@ -22,6 +22,7 @@ export const server = {
 
 export const api_routes = {
 	countries: `${server.frontend.url}api/countries`,
+	success_stories: `${server.frontend.url}api/success-stories`,
 	business_sectors: `${server.frontend.url}api/business-sector`,
 	create_account: `${server.backend.url}php/processes/CreateAccount.php`,
 	sign_in: `${server.backend.url}php/processes/SignIn.php`,

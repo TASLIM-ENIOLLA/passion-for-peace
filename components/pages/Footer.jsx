@@ -73,9 +73,9 @@ export default () => {
 			<div className = 'container pt-5'>
 				<div className = 'row'>
 					<div className = 'col-12 mb-5'>
-						<img className = 'd-block mb-5' width = '120' src = '/images/logo.svg' />
-						<p className = 'text-capitalize bold mb-5 text-white col-lg-6 col-md-7 px-0'>
-							Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.
+						<img className = 'd-block mb-5' width = '120' src = '/images/ppi.jpg' />
+						<p className = 'text-capitalize bold mb-5 col-lg-6 col-md-7 px-0' style = {{color: '#e49452'}}>
+							Passion for peace initiative is a non-governmental organization established with the aim of preventing violence, conflicts and the objective of maintaining a peaceful society.
 						</p>
 						<div className = 'row'>
 							<div className = 'col-auto text-center'>
@@ -110,7 +110,7 @@ export default () => {
 						<h3 className = 'text-capitalize bold mb-5 text-white'>what we do</h3>
 						<div className = 'pt-2'>
 							<div className = 'mb-4'>
-								<a className = 'transit bold d-inline-block text-white bold text-capitalize'>sustainable developement goals</a>
+								<a href = 'https://sdgs.un.org/goals' className = 'transit bold d-inline-block text-white bold text-capitalize'>sustainable developement goals</a>
 								<div className = 'ml-4 mt-3'>
 									<li className = 'text-white bold text-capitalize'>Youth developement program</li>
 								</div>

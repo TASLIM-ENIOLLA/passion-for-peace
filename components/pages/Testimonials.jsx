@@ -1,4 +1,15 @@
+import {useState, useEffect} from 'react'
+import {api_routes} from '/config'
+
 export default () => {
+    const [successStories, setSuccessStories] = useState([])
+
+    useEffect(() => {
+        fetch(`${api_routes.success_stories}?count=4`)
+        .then(res => res.json())
+        .then(({data, type}) => setSuccessStories(data))
+    }, [])
+
     return (
         <section className = 'py-5' id = 'success-stories'>
             <div className = 'container py-5'>
@@ -8,26 +19,19 @@ export default () => {
                             success stories
                         </h2>
                     </div>
-                    <div className = 'row overflow-x-auto transparent-scrollbar flex-nowrap'>
-                        <div className = 'col-11 col-md-7 col-lg-5 mb-5'>
-                            <TestimonialCard />
-                        </div>
-                        <div className = 'col-11 col-md-7 col-lg-5 mb-5'>
-                            <TestimonialCard />
-                        </div>
-                        <div className = 'col-11 col-md-7 col-lg-5 mb-5'>
-                            <TestimonialCard />
-                        </div>
-                        <div className = 'col-11 col-md-7 col-lg-5 mb-5'>
-                            <TestimonialCard />
-                        </div>
-                        <div className = 'col-11 col-md-7 col-lg-5 mb-5'>
-                            <TestimonialCard />
-                        </div>
-                        <div className = 'col-11 col-md-7 col-lg-5 mb-5'>
-                            <TestimonialCard />
-                        </div>
-                    </div>
+                    <div className = 'row overflow-x-auto transparent-scrollbar flex-nowrap'>{
+                        successStories.map((successStoriesData, index) => (
+                            <div key = {`${successStoriesData.id}-${index}`} className = 'col-11 col-md-7 col-lg-5 mb-5'>
+                                <TestimonialCard {...successStoriesData} />
+                            </div>
+                        ))
+                    }</div>
+                    <p className = 'pt-5 text-center'>
+                        <a className = 'underline fo-s-15 light text-muted d-inline-flex a-i-c' href = './success-stories'>
+                            See more
+                            <span className = 'bi bi-box-arrow-up-right ml-3'></span>
+                        </a>
+                    </p>
                 </div>
             </div>
             <style jsx>{`
@@ -54,25 +58,26 @@ export default () => {
     )
 }
 
+const Rating = (rating) => (
+    <div className = 'd-inline-block'>{
+        [1,2,3,4,5].map((each, index) => (
+            <span key = {index} className = {`bi bi-star-fill fo-s-16 ${index < rating ? 'text-orange' : 'text-muted'} mx-1`}></span>
+        ))
+    }</div>
+)
 
-const TestimonialCard = () => (
+const TestimonialCard = ({id, name, role, comment, rating}) => (
     <div className = 'border px-4 rounded-1x shadow'>
         <div className = 'py-4 flex-h a-i-c j-c-space-between'>
             <div>
                 <span className = 'bi bi-quote fa-3x'></span>
             </div>
             <div>
-                <div className = 'd-inline-block'>
-                    <span className = 'bi bi-star-fill fo-s-16 text-orange mx-1'></span>
-                    <span className = 'bi bi-star-fill fo-s-16 text-orange mx-1'></span>
-                    <span className = 'bi bi-star-fill fo-s-16 text-orange mx-1'></span>
-                    <span className = 'bi bi-star-fill fo-s-16 text-muted mx-1'></span>
-                    <span className = 'bi bi-star-fill fo-s-16 text-muted mx-1'></span>
-                </div>
+                <Rating rating = {rating} />
             </div>
         </div>
         <p className = 'py-4 text-muted light fo-s-15'>
-            Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu eirmod tempor invidunt labore.Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonu.
+            <span className = 'fo-s-15 five-line'>{comment}</span>
         </p>
         <div className = 'pb-4 row a-i-c'>
             <div className = 'col-auto'>
@@ -81,11 +86,17 @@ const TestimonialCard = () => (
                 </div>
             </div>
             <div className = 'col text-right'>
-                <h4 className = 'one-line text-capitalize bold text-dark'>Musa-Azeez Taslim Eniola Aderibigbe Amoo</h4>
-                <h5 className = 'one-line text-capitalize text-muted'>CEO, Makerflix</h5>
+                <h4 className = 'one-line text-capitalize bold text-dark'>{name}</h4>
+                <h5 className = 'one-line text-capitalize text-muted'>{role}</h5>
             </div>
         </div>
         <style jsx>{`
+            .five-line{
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden !important;
+            }
             .fa-3x{
                 font-size: 3rem;
             }

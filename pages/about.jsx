@@ -54,11 +54,26 @@ export default () => {
                                         <div className = 'fo-s-15 text-muted light'>
                                             <p className = 'fo-s-15 text-muted light'>The following SDG goals have been highlighted:</p>
                                             <ul className = 'ml-4 mt-4 fo-s-15 light'>
-                                                <li className = 'mb-3 fo-s-15 light text-muted'>SDG 4:</li>
-                                                <li className = 'mb-3 fo-s-15 light text-muted'>SDG 8:</li>
-                                                <li className = 'mb-3 fo-s-15 light text-muted'>SDG 9:</li>
-                                                <li className = 'mb-3 fo-s-15 light text-muted'>SDG 11:</li>
-                                                <li className = 'mb-3 fo-s-15 light text-muted'>SDG 12:</li>
+                                                <li className = 'mb-3 fo-s-15 light text-muted'>
+                                                    <span>SDG 4: Quality education</span>
+                                                    <img src = './images/goals/4.jpg' className = 'd-block mt-2' width = '60' />
+                                                </li>
+                                                <li className = 'mb-3 fo-s-15 light text-muted'>
+                                                    <span>SDG 8: Decent work and economic growth</span>
+                                                    <img src = './images/goals/8.jpg' className = 'd-block mt-2' width = '60' />
+                                                </li>
+                                                <li className = 'mb-3 fo-s-15 light text-muted'>
+                                                    <span>SDG 9: Industry, innovation and infrastructure</span>
+                                                    <img src = './images/goals/9.jpg' className = 'd-block mt-2' width = '60' />
+                                                </li>
+                                                <li className = 'mb-3 fo-s-15 light text-muted'>
+                                                    <span>SDG 11: Sustainable cities and economies</span>
+                                                    <img src = './images/goals/11.jpg' className = 'd-block mt-2' width = '60' />
+                                                </li>
+                                                <li className = 'mb-3 fo-s-15 light text-muted'>
+                                                    <span>SDG 12: Responsible consumption and production</span>
+                                                    <img src = './images/goals/12.jpg' className = 'd-block mt-2' width = '60' />
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

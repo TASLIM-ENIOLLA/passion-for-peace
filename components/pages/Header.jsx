@@ -33,7 +33,7 @@ export default () => {
 			<div className = 'container'>
 				<div className = 'row py-4 j-c-space-between a-i-c'>
 					<div className = 'col-auto'>
-						<a href = './'><img src="./images/logo-2.svg" alt="Logo" /></a>
+						<a href = './'><img src="./images/ppigrant.png" width = '140' alt="Logo" /></a>
 					</div>
 					<div className = 'col-auto col-lg-d-none '>
 						<button className = 'bg-clear border-0 px-3 py-0' onClick = {() => SideBarActions.open()}>
@@ -79,7 +79,7 @@ const SideBar = () => {
 					<div className = 'row py-3 a-i-c'>
 						<div className = 'col'>
 							<a href = './'>
-								<img src="./images/logo-2.svg" alt="Logo" />
+								<img src="./images/ppigrant.png" width = '120' alt="Logo" />
 							</a>
 						</div>
 						<div className = 'col-auto'>

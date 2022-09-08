@@ -128,7 +128,7 @@ export default ({user_data}) => {
                                         <Button className = {`py-4 px-5 btn btn-success letter-spacing-1 rounded-lg text-capitalize bold ${![userData.business_sector, userData.country_code].includes('') ? '' : 'disabled'}`} onClick = {() => UpdateUserData(userData).then(({data, type}) => notify({
                                             type: type === 'success' ? type : 'danger',
                                             message: data,
-                                            onSucceed: () => window.location = `http://localhost:3000/create-business-plan?ref_id=${userData.id}`
+                                            onSucceed: () => window.location = `${server.business_plan.url}/create-business-plan?ref_id=${userData.id}`
                                         }))}>create business plan</Button>
                                     </div>
                                 </div>

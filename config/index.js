@@ -17,6 +17,13 @@ export const server = {
 			? 'http://localhost:80/passion-for-peace/'
 			: 'https://pfp1904.000webhostapp.com/'
 		)
+	},
+	business_plan: {
+		url: (
+			(dev)
+			? 'http://localhost:3015/'
+			: 'http://unknown/'
+		)
 	}
 }
 

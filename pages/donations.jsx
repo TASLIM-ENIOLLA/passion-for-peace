@@ -1,13 +1,13 @@
 import Header from '../components/pages/Header'
 import Footer from '../components/pages/Footer'
 
-export default () => {
+export default function Donations(){
     return (
         <main className = 'vh100 vw100 flex-v'>
             <Header />
             <section className = 'flex-1 overflow-y-auto w-100'>
-                <section className = 'landing-bg'>
-
+                <section className = 'landing-bg flex-v a-i-c j-c-c'>
+                    <h1 className = 'animated fadeIn bold text-white resize-font text-capitalize'>Donations</h1>
                 </section>
                 <section className = 'py-5'>
                     <div className = 'container py-5'>
@@ -16,18 +16,31 @@ export default () => {
                                 <div>
                                     <div className = 'mb-5 pb-3 pt-5' id = 'donations'>
                                         <h1 className = 'theme-color mb-5'>Donation</h1>
-                                        <p className = 'fo-s-15 text-muted light'>
-                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.
-                                        </p>
+                                        <div className = 'table-responsive'>
+                                            <table className = 'table text-uppercase table-bordered'>
+                                                <tr>
+                                                    <td className = 'bold text-secondary'>account name</td>
+                                                    <td>passion for peace initiative</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className = 'bold text-secondary'>account number</td>
+                                                    <td>7798-354-013</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className = 'bold text-secondary'>bank</td>
+                                                    <td>FCMB</td>
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div>
                                     <div className = 'mb-5 pb-3 pt-5' id = 'donate'>
                                         <h3 className = 'theme-color mb-4'>Donate</h3>
                                         <div className = 'fo-s-15 text-muted light'>
                                             <p className = 'fo-s-15 text-muted light'>Click on the button below and follow instructions to make a donation and remember, we are grateful!</p>
-                                            <a href = '' className = 'a-i-c py-2 px-5 btn theme-bg text-white bold text-capitalize d-inline-flex'>
+                                            <button disabled = {true} className = 'a-i-c py-2 px-5 btn theme-bg text-white bold text-capitalize d-inline-flex'>
                                                 donate now
                                                 <span className = 'bi bi-cash-stack fa-2x ml-3'></span>
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                     <div className = 'mb-5 pb-3 pt-5' id = 'our-donors'>
@@ -67,13 +80,29 @@ export default () => {
                 <Footer />
             </section>
             <style>{`
+                .resize-font{
+                    position: relative;
+                    z-index: 10;
+                }
+                .resize-font::before{
+                    z-index: -10;
+                    position: absolute;
+                    top: 00%;
+                    left: 50%;
+                    color: rgba(200,200,200,.3);
+                    transform: translate(-50%, -50%) scale(1.5);
+                    content: 'donations';
+                    text-transform: capitalize;
+                    display: block;
+                    width: 100%;
+                    font-size: inherit;
+                }
                 .landing-bg{
                     background-size: cover;
-					background-position: center;
+					background-position: top;
 					background-attachment: fixed;
 					background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/images/s-1.jpg);
-                    min-height: 300px;
-                    // min-height: calc(80vh - 80px);
+                    min-height: 400px;
                 }
             `}</style>
             <script src = '/js/pages/about.js'></script>

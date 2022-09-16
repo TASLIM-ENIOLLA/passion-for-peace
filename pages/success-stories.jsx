@@ -17,8 +17,8 @@ export default function(){
         <main className = 'vh100 vw100 flex-v'>
             <Header />
             <section className = 'flex-1 overflow-y-auto w-100'>
-                <section className = 'landing-bg'>
-
+                <section className = 'landing-bg flex-v a-i-c j-c-c border'>
+                    <h1 className = 'animated fadeIn bold text-white resize-font text-capitalize'>Success Stories</h1>
                 </section>
                 <section className = 'py-5'>
                     <div className = 'container py-5'>
@@ -39,12 +39,29 @@ export default function(){
                 <Footer />
             </section>
             <style>{`
+                .resize-font{
+                    position: relative;
+                    z-index: 10;
+                }
+                .resize-font::before{
+                    z-index: -10;
+                    position: absolute;
+                    top: 00%;
+                    left: 50%;
+                    color: rgba(200,200,200,.3);
+                    transform: translate(-50%, -50%) scale(1.5);
+                    content: 'success stories';
+                    text-transform: capitalize;
+                    display: block;
+                    width: 100%;
+                    font-size: inherit;
+                }
                 .landing-bg{
                     background-size: cover;
-                    background-position: center;
-                    background-attachment: fixed;
-                    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/images/s-1.jpg);
-                    min-height: 300px;
+					background-position: top;
+					background-attachment: fixed;
+					background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/images/s-1.jpg);
+                    min-height: 400px;
                 }
             `}</style>
             <script src = '/js/pages/about.js'></script>
@@ -58,11 +75,11 @@ export function SuccessStoryCard({id, name, role, comment, rating}){
     return (
         <div className = {`row mb-5`}>
             <div className = 'col'>
-                <p className = {`fo-s-15 overflow-0 transit transit text-justify text-muted ${expanded ? 'all-lines' : 'double-line'}`}>
-                    <span>{comment}</span>
+                <p className = {`overflow-0 transit transit text-justify text-muted ${expanded ? 'all-lines' : 'double-line'}`}>
+                    <span className = 'fo-s-15'>{comment}</span>
                 </p>
             </div>
-            <div className = 'col-auto'>
+            <div className = 'col-auto pl-0'>
                 <button onClick = {() => setExpanded((e) => !e)} className = {`${expanded ? 'bg-light text-muted' : 'theme-bg text-white'} px-2 mt-1 outline-0 border-0 shadow-sm rounded-circle`} style = {{width: '40px', height: '40px'}}>
                     <span className = {`bi bi-chevron-${!expanded ? 'expand' : 'contract'} fa-2x`}></span>
                 </button>
@@ -75,8 +92,8 @@ export function SuccessStoryCard({id, name, role, comment, rating}){
                         </div>
                     </div>
                     <div className = 'col'>
-                        <h5 className = 'one-line text-capitalize bold text-dark'>{name}</h5>
-                        <p className = 'm-0 one-line text-capitalize text-muted'>{role}</p>
+                        <h5 className = 'one-line text-capitalize bold text-dark mb-0'>{name}</h5>
+                        <p className = 'one-line text-capitalize text-muted mb-0'>{role}</p>
                     </div>
                 </div>
             </div>

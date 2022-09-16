@@ -11,16 +11,14 @@ import {useEffect} from 'react'
 
 export default () => {
     return (
-        <main className = 'vh100 vw100 flex-v'>
-            <Header />
-            <section className = 'flex-1 overflow-y-auto w-100'>
-                <Landing />
-                <About />
-                <HowItWorks />
-                <Testimonials />
-                <Partners />
-                <Footer />
-            </section>
-        </main>
+        <>
+        <Header />
+        <Landing />
+        <About />
+        <HowItWorks />
+        <Testimonials />
+        <Partners />
+        <Footer />
+        </>
     )
 }

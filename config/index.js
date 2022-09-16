@@ -7,6 +7,7 @@ export const server = {
 		url: (
 			(dev)
 			? 'http://localhost:3010/'
+			// ? 'http://192.168.137.1:3010/'
 			: 'https://passion-for-peace.vercel.app/'
 		)
 	},
@@ -33,6 +34,7 @@ export const api_routes = {
 	business_sectors: `${server.frontend.url}api/business-sector`,
 	create_account: `${server.backend.url}php/processes/CreateAccount.php`,
 	sign_in: `${server.backend.url}php/processes/SignIn.php`,
+	message: `${server.backend.url}php/processes/Message.php`,
 	newsletter: `${server.backend.url}php/processes/Newsletter.php`,
 	dashboard: {
 		get_user_data: `${server.backend.url}php/processes/dashboard/GetUserData.php`,

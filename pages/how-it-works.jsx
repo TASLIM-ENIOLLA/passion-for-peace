@@ -4,7 +4,7 @@ import Footer from '../components/pages/Footer'
 const ContentNTab = [
     {
         content: (`
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.
+            First you need to create an account. Personal details will be required. Once registration is complete, each candidate needs to create a business proposal which enables them eligibility to the grant.
         `),
         tabID: 'how-it-works',
         tabTitle: 'How it works'
@@ -29,13 +29,13 @@ const ContentNTab = [
     }
 ]
 
-export default () => {
+export default function HowItWorks(){
     return (
         <main className = 'vh100 vw100 flex-v'>
             <Header />
             <section className = 'flex-1 overflow-y-auto w-100'>
-                <section className = 'landing-bg'>
-
+                <section className = 'landing-bg flex-v a-i-c j-c-c'>
+                    <h1 className = 'animated fadeIn bold text-white resize-font text-capitalize'>How it works</h1>
                 </section>
                 <section className = 'py-5'>
                     <div className = 'container py-5'>
@@ -75,12 +75,29 @@ export default () => {
                 <Footer />
             </section>
             <style>{`
+                .resize-font{
+                    position: relative;
+                    z-index: 10;
+                }
+                .resize-font::before{
+                    z-index: -10;
+                    position: absolute;
+                    top: 00%;
+                    left: 50%;
+                    color: rgba(200,200,200,.3);
+                    transform: translate(-50%, -50%) scale(1.5);
+                    content: 'how it works';
+                    text-transform: capitalize;
+                    display: block;
+                    width: 100%;
+                    font-size: inherit;
+                }
                 .landing-bg{
                     background-size: cover;
-					background-position: center;
+					background-position: top;
 					background-attachment: fixed;
 					background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/images/s-1.jpg);
-                    min-height: 300px;
+                    min-height: 400px;
                 }
             `}</style>
             <script src = '/js/pages/about.js'></script>

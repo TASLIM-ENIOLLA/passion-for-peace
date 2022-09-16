@@ -32,10 +32,10 @@
 	color: var(--red);
 }
 .bg-orange{
-	background: var(--orange);
+	background: #ec3237;
 }
 .text-orange{
-	color: var(--orange);
+	color: #ec3237;
 }
 .bg-yellow{
 	background: var(--yellow);
@@ -126,4 +126,12 @@
 }
 .text-dark{
 	color: var(--dark);
+}
+.resize-font{
+	font-size: 3rem;
+}
+@media (min-width: 760px){
+	.resize-font{
+		font-size: 4.5vw;
+	}
 }

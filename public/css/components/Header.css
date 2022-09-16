@@ -10,7 +10,7 @@
     top: 110%;
     width: 20%;
     transform: translate(-50%, 0);
-    background: var(--orange);
+    background: #ec3237;
     height: 5px;
     border-radius: 5px;
 }
@@ -34,7 +34,7 @@
     left: 0%;
     top: 110%;
     width: 20%;
-    background: var(--orange);
+    background: #ec3237;
     height: 5px;
     border-radius: 5px;
 }

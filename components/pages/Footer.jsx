@@ -12,7 +12,7 @@ fetch(api_routes.newsletter, {
 })
 .then(res => res.json())
 
-const Newsletter = () => {
+function Newsletter(){
 	const [email, setEmail] = useState('')
 	const [subscribed, setSubscribed] = useState(false)
 
@@ -60,7 +60,7 @@ const Newsletter = () => {
 	}
 }
 
-export default () => {
+export default function Footer(){
 	return (
 		<footer className = 'footer-bg pt-10'>
 			<div className = 'container px-5 mb-5'>
@@ -74,7 +74,7 @@ export default () => {
 				<div className = 'row'>
 					<div className = 'col-12 mb-5'>
 						<img className = 'd-block mb-5' width = '120' src = '/images/ppi.jpg' />
-						<p className = 'text-capitalize bold mb-5 col-lg-6 col-md-7 px-0' style = {{color: '#e49452'}}>
+						<p className = 'text-capitalize bold mb-5 col-lg-6 col-md-7 py-4 px-3 rounded-lg shadow bg-white theme-color'>
 							Passion for peace initiative is a non-governmental organization established with the aim of preventing violence, conflicts and the objective of maintaining a peaceful society.
 						</p>
 						<div className = 'row'>
@@ -104,6 +104,9 @@ export default () => {
 							<div className = 'mb-4'>
 								<a className = 'transit bold d-inline-block text-white text-capitalize'>president</a>
 							</div>
+							<div className = 'mb-4'>
+								<a href = './terms-and-conditions' className = 'transit bold d-inline-block text-white text-capitalize'>terms &amp; conditions</a>
+							</div>
 						</div>
 					</div>
 					<div className = 'col-12 col-sm-6 col-lg-3 mb-5'>
@@ -127,22 +130,22 @@ export default () => {
 						<h3 className = 'text-capitalize bold mb-5 text-white'>quick link</h3>
 						<div className = 'pt-2'>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white text-capitalize' href = './home'>home</a>
+								<a className = 'transit bold d-inline-block text-white text-capitalize' href = './home'>home</a>
 							</div>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white text-capitalize' href = './about'>about</a>
+								<a className = 'transit bold d-inline-block text-white text-capitalize' href = './about'>about</a>
 							</div>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white text-capitalize' href = './how-it-works'>how it works</a>
+								<a className = 'transit bold d-inline-block text-white text-capitalize' href = './how-it-works'>how it works</a>
 							</div>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white text-capitalize' href = './success-stories'>success stories</a>
+								<a className = 'transit bold d-inline-block text-white text-capitalize' href = './success-stories'>success stories</a>
 							</div>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white text-capitalize' href = './partners'>partners</a>
+								<a className = 'transit bold d-inline-block text-white text-capitalize' href = './partners'>partners</a>
 							</div>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white text-capitalize' href = './donations'>donations</a>
+								<a className = 'transit bold d-inline-block text-white text-capitalize' href = './donations'>donations</a>
 							</div>
 						</div>
 					</div>
@@ -150,16 +153,22 @@ export default () => {
 						<h3 className = 'text-capitalize bold mb-5 text-white'>contact us</h3>
 						<div className = 'pt-2'>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white bold' href = 'tel://+234-512-3567-984'>+234-512-3567-984</a>
+								<a className = 'transit bold d-inline-block text-white bold' href = './instant-message'>
+									Instant message
+									<span className = 'bi bi-box-arrow-up-right ml-3'></span>
+								</a>
 							</div>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white bold' href = 'mailto://info@pop.com'>info@pop.com</a>
+								<a className = 'transit bold d-inline-block text-white bold' href = 'tel://+234-908-4879-904'>+234-908-4879-904</a>
 							</div>
 							<div className = 'mb-4'>
-								<a className = 'page-links transit bold d-inline-block text-white bold' href = 'http://www.passion-for-peace.com'>www.passion-for-peace.com</a>
+								<a className = 'transit bold d-inline-block text-white bold' href = 'mailto://info@ppi-africa.com'>info@ppi-africa.com</a>
 							</div>
 							<div className = 'mb-4'>
-								<address className = 'page-links transit bold d-inline-block text-white text-capitalize bold'>123 Street New York City, United States Of America 750.</address>
+								<a className = 'transit bold d-inline-block text-white bold' href = 'http://www.ppi-africa.com'>www.ppi-africa.com</a>
+							</div>
+							<div className = 'mb-4'>
+								<address className = 'transit bold d-inline-block text-white text-capitalize bold'>13B, AbdulKadir Road, G.R.A., Ilorin</address>
 							</div>
 						</div>
 					</div>

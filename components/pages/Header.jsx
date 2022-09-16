@@ -17,53 +17,55 @@ export default () => {
 	}
 
 	return (
-		<header className =  'bg-white shadow'>
-			<div className = 'bg-orange'>
+		<>
+			<section className = 'bg-orange'>
 				<div className = 'container'>
 					<div className = 'row'>
 						<div className = 'col-md-9 ml-auto'>
-							<p className = 'm-0 py-2 text-white bold text-center text-md-right'>Deadline: Applications must be submitted on or before {deadline}.</p>
+							<p className = 'm-0 py-2 text-white bold text-md-right'>Deadline: Applications must be submitted on or before {deadline}.</p>
 						</div>
 					</div>
 				</div>
-			</div>
-			<SideBarContext.Provider value = {SideBarActions}>
-				<SideBar />
-			</SideBarContext.Provider>
-			<div className = 'container'>
-				<div className = 'row py-4 j-c-space-between a-i-c'>
-					<div className = 'col-auto'>
-						<a href = './'><img src="./images/ppigrant.png" width = '140' alt="Logo" /></a>
-					</div>
-					<div className = 'col-auto col-lg-d-none '>
-						<button className = 'bg-clear border-0 px-3 py-0' onClick = {() => SideBarActions.open()}>
-							<span className = 'bi bi-border-width fa-3x'></span>
-						</button>
-					</div>{
-						(asPath === '/')
-						? (
-							<div className = 'col-auto col-lg-d-block col-d-none'>{
-								URL.website.map(({name, ref}) => (
-									<a key = {ref} className = {`page-links transit bold d-inline-block ${new RegExp(ref).test(asPath) ? 'text-orange border-thick-bottom' : 'theme-color'} text-capitalize mx-4`} href = {`#${ref}`}>{name}</a>
-								))
-							}</div>
-						)
-						: (
-							<div className = 'col-auto col-lg-d-block col-d-none'>{
-								URL.website.map(({name, ref}) => (
-									<a key = {ref} className = {`transit bold d-inline-block ${new RegExp(ref).test(asPath) ? 'text-orange border-thick-bottom' : 'theme-color'} text-capitalize mx-4`} href = {`./${ref}`}>{name}</a>
-								))
-							}</div>
-						)
-					}
-					<div className = 'col-auto col-lg-d-block col-d-none'>
-						<a className = 'transit bold d-inline-block theme-color text-capitalize mx-4' href = './sign-in'>sign in</a>
-						<a className = 'bold p-3 transit rounded-lg shadow btn d-inline-block text-white text-capitalize mx-4 apply-now-btn' href = './apply-now'>apply now</a>
+			</section>
+			<header className = 'bg-white shadow po-sticky top-0 left-0' style = {{zIndex: 10000000}}>
+				<SideBarContext.Provider value = {SideBarActions}>
+					<SideBar />
+				</SideBarContext.Provider>
+				<div className = 'container'>
+					<div className = 'row py-4 j-c-space-between a-i-c'>
+						<div className = 'col-auto'>
+							<a href = './'><img src="./images/ppigrant.png" width = '140' alt="Logo" /></a>
+						</div>
+						<div className = 'col-auto d-xl-none'>
+							<button className = 'bg-clear border-0 px-3 py-0' onClick = {() => SideBarActions.open()}>
+								<span className = 'bi bi-border-width fa-3x'></span>
+							</button>
+						</div>{
+							(asPath === '/')
+							? (
+								<div className = 'col-auto d-xl-block d-none'>{
+									URL.website.map(({name, ref}) => (
+										<a key = {ref} className = {`page-links transit bold d-inline-block ${new RegExp(ref).test(asPath) ? 'text-orange border-thick-bottom' : 'theme-color'} text-capitalize mx-4`} href = {`#${ref}`}>{name}</a>
+									))
+								}</div>
+							)
+							: (
+								<div className = 'col-auto d-xl-block d-none'>{
+									URL.website.map(({name, ref}) => (
+										<a key = {ref} className = {`transit bold d-inline-block ${new RegExp(ref).test(asPath) ? 'text-orange border-thick-bottom' : 'theme-color'} text-capitalize mx-4`} href = {`./${ref}`}>{name}</a>
+									))
+								}</div>
+							)
+						}
+						<div className = 'col-auto d-xl-block d-none'>
+							<a className = 'transit bold d-inline-block theme-color text-capitalize mx-3' href = './sign-in'>sign in</a>
+							<a className = 'bold p-3 transit rounded-lg shadow btn d-inline-block text-white text-capitalize mx-3 apply-now-btn' href = './apply-for-grant'>apply for grant</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			<Script strategy = 'afterInteractive' src = '/js/components/header.js' />
-		</header>
+				<Script strategy = 'afterInteractive' src = '/js/components/header.js' />
+			</header>
+		</>
 	)
 }
 
@@ -79,7 +81,7 @@ const SideBar = () => {
 					<div className = 'row py-3 a-i-c'>
 						<div className = 'col'>
 							<a href = './'>
-								<img src="./images/ppigrant.png" width = '120' alt="Logo" />
+								<img src="./images/ppigrant.png" width = '130' alt="Logo" />
 							</a>
 						</div>
 						<div className = 'col-auto'>
@@ -107,7 +109,7 @@ const SideBar = () => {
 								<a href = './sign-in' className = 'fo-s-15 transit bold d-inline-block theme-color text-capitalize'>sign in</a>
 							</div>
 							<div className="mb-5">
-								<a className = 'bold p-3 transit rounded-lg shadow btn text-white text-capitalize d-block w-100 fo-s-15 apply-now-btn' href = './apply-now'>apply now</a>
+								<a className = 'bold p-3 transit rounded-lg shadow btn text-white text-capitalize d-block w-100 fo-s-15 apply-now-btn' href = './apply-for-grant'>apply for grant</a>
 							</div>
 						</div>
 					</div>

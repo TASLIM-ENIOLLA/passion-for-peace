@@ -49,7 +49,7 @@ export default () => {
 			                </div>
 			                <div className='col-lg-6'>
 			                    <div className=''>
-			                        <img src='/images/about2.svg' className = 'd-block w-100' alt='about' />
+									<img src='/images/bootcamp.jpg' className = 'd-block w-100' alt='about' />
 			                    </div>
 			                </div>
 			            </div>
@@ -73,7 +73,7 @@ export default () => {
 			                </div>
 			                <div className='col-lg-6'>
 			                    <div className=''>
-			                        <img src='/images/about3.svg' className = 'd-block w-100' alt='about' />
+									<img src='/images/black-scientist.jpg' className = 'd-block w-100' alt='about' />
 			                    </div>
 			                </div>
 			            </div>

@@ -3,12 +3,13 @@ import {useState, useEffect} from 'react'
 
 let Z_INDEX = 1000
 
-export const notify = ({message = '', callback, onSucceed, type = 'light', duration = 3000}) => {
+export const notify = ({message = '', onReady, callback, onSucceed, type = 'light', duration = 3000}) => {
     const Notify = () => {
         const [doubleLine, setDoubleLine] = useState(true)
         const id = `_notify_`
 
         useEffect(() => {
+            typeof onReady === 'function' ? onReady() : false;
             setTimeout(() => {
                 typeof callback === 'function' ? (
                     callback(type)
@@ -23,7 +24,7 @@ export const notify = ({message = '', callback, onSucceed, type = 'light', durat
                 )
             }, duration);
         }, [])
-        
+
         return (
             <div id = {id} className = 'p-5 po-fixed bottom-0 left-0 w-100' style = {{zIndex: Z_INDEX += 10}}>
                 <div className = {`animated bg-${type}-light slideInRight a-i-c p-2 rounded-1x shadow ml-auto flex-h`} style = {{maxWidth: '500px'}}>
